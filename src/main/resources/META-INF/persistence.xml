@@ -4,7 +4,10 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
     <persistence-unit name="eventmngmtpu">
 
+  
+        <class>alessioceccarini.entities.Person</class>
         <class>alessioceccarini.entities.Event</class>
+        <class>alessioceccarini.entities.Location</class>
 
         <properties>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/eventmngmt"/>
