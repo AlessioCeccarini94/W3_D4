@@ -32,7 +32,7 @@ public class Application {
 //		pd.savePerson(person4);
 //		pd.savePerson(person5);
 
-		Event event = new Event("beach party", LocalDate.of(2026, 7, 10), EventType.PUBBLIC);
+//		Event event = new Event("beach party", LocalDate.of(2026, 7, 10), EventType.PUBBLIC);
 		Event event1 = new Event("graduate party", LocalDate.of(2026, 9, 20), EventType.PRIVATE);
 		Event event2 = new Event("sagra della castagna", LocalDate.of(2026, 11, 10), EventType.PUBBLIC);
 //		ed.saveEvent(event);
@@ -47,9 +47,9 @@ public class Application {
 //		ld.saveLocation(location1);
 //		ld.saveLocation(location2);
 		try {
-			pd.findById("fff90edd-2daf-43a3-8e35-ce5c013a4bfe");
-			ed.findById("b2ce9ee7-9849-40cc-af88-c1d472256baa");
-			Partecipation partecipation = new Partecipation(person1, event, PartecipationState.CONFERMATO);
+			Person person = pd.findById("fff90edd-2daf-43a3-8e35-ce5c013a4bfe");
+			Event event = ed.findById("b2ce9ee7-9849-40cc-af88-c1d472256baa");
+			Partecipation partecipation = new Partecipation(person, event, PartecipationState.CONFERMATO);
 			partd.savePartecipation(partecipation);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
