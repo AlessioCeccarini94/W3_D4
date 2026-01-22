@@ -12,27 +12,19 @@ public class FootbalGames extends Event {
 	private String homeTeam;
 	private String awayTeam;
 	private String winnerTeam;
-	private int homeTeamOfGoals;
-	private int awayTeamOfGoals;
+	private Integer homeTeamGoals;
+	private Integer awayTeamGoals;
 
 
 	public FootbalGames() {
 	}
 
-	public FootbalGames(String name, LocalDate matchDay, EventType type, Location location, String homeTeam, String awayTeam, String winnerTeam) {
+	public FootbalGames(String name, LocalDate matchDay, EventType type, Location location, String homeTeam, String awayTeam) {
 		super(name, matchDay, type, location);
 		this.homeTeam = homeTeam;
 		this.awayTeam = awayTeam;
-		this.winnerTeam = winnerTeam;
-		if (homeTeamOfGoals > 0 && awayTeamOfGoals > 0) {
-			this.homeTeamOfGoals = homeTeamOfGoals;
-			this.awayTeamOfGoals = awayTeamOfGoals;
-		} else {
-			this.homeTeamOfGoals = Integer.parseInt(null);
-			this.awayTeamOfGoals = Integer.parseInt(null);
-		}
-
-
+		this.homeTeamGoals = null;
+		this.awayTeamGoals = null;
 	}
 
 
@@ -60,20 +52,20 @@ public class FootbalGames extends Event {
 		this.winnerTeam = winnerTeam;
 	}
 
-	public int getHomeTeamOfGoals() {
-		return homeTeamOfGoals;
+	public Integer getHomeTeamOfGoals() {
+		return homeTeamGoals;
 	}
 
-	public void setHomeTeamOfGoals(int homeTeamOfGoals) {
-		this.homeTeamOfGoals = homeTeamOfGoals;
+	public void setHomeTeamOfGoals(int homeTeamGoals) {
+		this.homeTeamGoals = homeTeamGoals;
 	}
 
-	public int getAwayTeamOfGoals() {
-		return awayTeamOfGoals;
+	public Integer getAwayTeamGoals() {
+		return awayTeamGoals;
 	}
 
-	public void setAwayTeamOfGoals(int awayTeamOfGoals) {
-		this.awayTeamOfGoals = awayTeamOfGoals;
+	public void setAwayTeamGoals(int awayTeamGoals) {
+		this.awayTeamGoals = awayTeamGoals;
 	}
 
 	@Override
@@ -82,8 +74,9 @@ public class FootbalGames extends Event {
 				"homeTeam='" + homeTeam + '\'' +
 				", awayTeam='" + awayTeam + '\'' +
 				", winnerTeam='" + winnerTeam + '\'' +
-				", homeTeamOfGoals=" + homeTeamOfGoals +
-				", awayTeamOfGoals=" + awayTeamOfGoals +
+				", homeTeamOfGoals=" + homeTeamGoals +
+				", awayTeamOfGoals=" + awayTeamGoals +
 				'}' + super.toString();
 	}
 }
+
