@@ -1,13 +1,11 @@
 package alessioceccarini.entities;
 
-import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 
 import java.time.LocalDate;
 
 
 @Entity
-@DiscriminatorValue("football_games")
 public class FootbalGames extends Event {
 	private String homeTeam;
 	private String awayTeam;

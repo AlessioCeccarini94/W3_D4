@@ -26,7 +26,7 @@ public class Application {
 
 		Location olimpico = new Location("Stadio Olimpico", "Rome");
 
-		ld.saveLocation(olimpico);
+//		ld.saveLocation(olimpico);
 
 		FootbalGames fg = new FootbalGames(
 				"Roma-Stoccarda",
@@ -38,7 +38,11 @@ public class Application {
 		fg.setAwayTeamGoals(0);
 		fg.setWinnerTeam("Roma");
 
-		ed.saveEvent(fg);
+//		ed.saveEvent(fg);
+
+
+		ed.findFootballEvents().forEach(System.out::println);
+
 
 		emf.close();
 		em.close();

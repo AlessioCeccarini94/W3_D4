@@ -1,8 +1,11 @@
 package alessioceccarini.dao;
 
 import alessioceccarini.entities.Event;
+import alessioceccarini.entities.FootbalGames;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
+
+import java.util.List;
 
 
 public class EventDao {
@@ -22,5 +25,8 @@ public class EventDao {
 
 		System.out.println(event.getName() + " è stato salvato!");
 	}
-	
+
+	public List<FootbalGames> findFootballEvents() {
+		return em.createQuery("SELECT e FROM FootbalGames e", FootbalGames.class).getResultList();
+	}
 }
