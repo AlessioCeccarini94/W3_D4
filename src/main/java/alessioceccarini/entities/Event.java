@@ -21,6 +21,10 @@ public class Event {
 	@Column(name = "event_type")
 	private EventType type;
 
+	@ManyToOne
+	@JoinColumn(name = "location_id", nullable = false)
+	private Location location;
+
 	@OneToMany(mappedBy = "event")
 	private List<Partecipation> partecipation;
 
@@ -61,6 +65,14 @@ public class Event {
 		this.type = type;
 	}
 
+	public Location getLocation() {
+		return location;
+	}
+
+	public void setLocation(Location location) {
+		this.location = location;
+	}
+
 	@Override
 	public String toString() {
 		return "Event{" +
@@ -68,7 +80,8 @@ public class Event {
 				", name='" + name + '\'' +
 				", date=" + date +
 				", type=" + type +
+				", location=" + location +
+				", partecipation=" + partecipation +
 				'}';
 	}
 }
-
